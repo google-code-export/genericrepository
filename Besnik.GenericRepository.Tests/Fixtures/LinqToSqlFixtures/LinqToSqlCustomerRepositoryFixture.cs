@@ -50,7 +50,6 @@ namespace Besnik.GenericRepository.Tests
 
 		protected override ICustomerRepository CreateCustomerRepository(IUnitOfWork unitOfWork)
 		{
-			// repository
 			var specificationLocator = this.Factory.GetSpecificationLocatorForLinqToSql();
 			return new CustomerRepository(unitOfWork, specificationLocator);
 		}

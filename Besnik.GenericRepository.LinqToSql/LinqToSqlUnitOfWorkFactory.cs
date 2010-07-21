@@ -43,6 +43,7 @@ namespace Besnik.GenericRepository.LinqToSql
 		public void Dispose()
 		{
 			this.ConnectionString = null;
+			this.Mapping = null;
 		}
 	}
 }

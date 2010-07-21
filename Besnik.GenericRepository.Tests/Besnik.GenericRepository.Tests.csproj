@@ -59,6 +59,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Data.Entity.CTP, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Data.Entity.CTP.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\NHibernate.dll</HintPath>
@@ -70,10 +74,12 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factory\Factory.cs" />
+    <Compile Include="Fixtures\EntityFrameworkFixtures\EntityFrameworkCustomerRepositoryFixture.cs" />
     <Compile Include="Fixtures\GenericFixtures\BaseUnitOfWorkFixture.cs" />
     <Compile Include="Fixtures\GenericFixtures\GenericCustomerRepositoryFixture.cs" />
     <Compile Include="Fixtures\LinqToSqlFixtures\LinqToSqlCustomerRepositoryFixture.cs" />
@@ -84,9 +90,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Besnik.Domain.EntityFramework\Besnik.Domain.EntityFramework.csproj">
+      <Project>{B3288165-24F4-49AF-A7B5-79B027F82EC8}</Project>
+      <Name>Besnik.Domain.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Besnik.Domain\Besnik.Domain.csproj">
       <Project>{D5B52DDB-C986-4055-9CAC-5526F42B8A93}</Project>
       <Name>Besnik.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Besnik.GenericRepository.EntityFramework\Besnik.GenericRepository.EntityFramework.csproj">
+      <Project>{5630007D-50C9-4D99-A734-BBE7451B1C3D}</Project>
+      <Name>Besnik.GenericRepository.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Besnik.GenericRepository.LinqToSql\Besnik.GenericRepository.LinqToSql.csproj">
       <Project>{207ADEBC-CCE9-4ACC-AEA8-E086BB23A638}</Project>

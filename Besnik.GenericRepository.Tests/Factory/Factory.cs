@@ -5,6 +5,7 @@ using System;
 using Besnik.GenericRepository.NHibernate;
 using Besnik.GenericRepository.LinqToSql;
 using Besnik.Domain.NHibernateRepository;
+using Besnik.GenericRepository.EntityFramework;
 
 namespace Besnik.GenericRepository.Tests
 {
@@ -66,6 +67,17 @@ namespace Besnik.GenericRepository.Tests
 				b =>
 				{
 					b.RegisterType<LinqToSqlUnitOfWorkConvertor>()
+						.As<IUnitOfWorkConvertor>()
+						.SingleInstance();
+				});
+		}
+
+		public ISpecificationLocator GetSpecificationLocatorForEntityFramework()
+		{
+			return GetSpecificationLocator(
+				b =>
+				{
+					b.RegisterType<EntityFrameworkUnitOfWorkConvertor>()
 						.As<IUnitOfWorkConvertor>()
 						.SingleInstance();
 				});
