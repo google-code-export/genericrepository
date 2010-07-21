@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.GenericRepository", "Besnik.GenericRepository\Besnik.GenericRepository.csproj", "{1C33F903-59B8-437C-8637-94CB394CA970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.Domain.NHibernateRepository", "Besnik.NHibernateRepository\Besnik.Domain.NHibernateRepository.csproj", "{ABDD5544-3CAA-49FB-A06A-895585BA55B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.Domain.NHibernateRepository", "Besnik.Domain.NHibernate\Besnik.Domain.NHibernate.csproj", "{ABDD5544-3CAA-49FB-A06A-895585BA55B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.Domain", "Besnik.Domain\Besnik.Domain.csproj", "{D5B52DDB-C986-4055-9CAC-5526F42B8A93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.GenericRepository.Tests", "Besnik.GenericRepository.Tests\Besnik.GenericRepository.Tests.csproj", "{1AA5D032-863A-4952-A00A-E48475E9CB9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.Domain.LinqToSqlRepository", "Besnik.LinqToSqlRepository\Besnik.Domain.LinqToSqlRepository.csproj", "{C6CC3E66-9506-43D7-BE8F-0C49D59C34E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.Domain.LinqToSqlRepository", "Besnik.Domain.LinqToSql\Besnik.Domain.LinqToSql.csproj", "{C6CC3E66-9506-43D7-BE8F-0C49D59C34E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Besnik.GenericRepository.NHibernate", "Besnik.GenericRepository.NHibernate\Besnik.GenericRepository.NHibernate.csproj", "{DCC5973E-B6BC-4A41-8996-ED4AFBEEB318}"
 EndProject

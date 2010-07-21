@@ -114,11 +114,11 @@
       <Project>{1C33F903-59B8-437C-8637-94CB394CA970}</Project>
       <Name>Besnik.GenericRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Besnik.LinqToSqlRepository\Besnik.Domain.LinqToSqlRepository.csproj">
+    <ProjectReference Include="..\Besnik.Domain.LinqToSql\Besnik.Domain.LinqToSql.csproj">
       <Project>{C6CC3E66-9506-43D7-BE8F-0C49D59C34E3}</Project>
       <Name>Besnik.Domain.LinqToSqlRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Besnik.NHibernateRepository\Besnik.Domain.NHibernateRepository.csproj">
+    <ProjectReference Include="..\Besnik.Domain.NHibernate\Besnik.Domain.NHibernate.csproj">
       <Project>{ABDD5544-3CAA-49FB-A06A-895585BA55B2}</Project>
       <Name>Besnik.Domain.NHibernateRepository</Name>
     </ProjectReference>
