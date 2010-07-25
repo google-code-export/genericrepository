@@ -3,13 +3,13 @@
 namespace Besnik.GenericRepository
 {
 	/// <summary>
-	/// The interface resolves specifications.
-	/// In concrete implementation this is wrapper over IoC container.
+	/// The interface resolves specifications for a repository.
+	/// The concrete implementation this usually wrapper over an IoC container.
 	/// </summary>
 	public interface ISpecificationLocator
 	{
 		/// <summary>
-		/// Gets specification.
+		/// Gets requested specification for given entity.
 		/// </summary>
 		TSpecification Resolve<TSpecification, TEntity>()
 			where TSpecification : ISpecification<TEntity>

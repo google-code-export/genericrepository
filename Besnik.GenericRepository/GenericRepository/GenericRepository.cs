@@ -25,6 +25,10 @@ namespace Besnik.GenericRepository
 		/// <summary>
 		/// Constructor.
 		/// </summary>
+		/// <param name="unitOfWork">Unit of work for concrete implementation of data mapper.</param>
+		/// <param name="specificationLocator">Specification locator resolves implementations of
+		/// <see cref="ISpecification"/> interface. <see cref="ISpecificationLocator"/> is normally
+		/// wrapper over IoC container.</param>
 		public GenericRepository(
 			IUnitOfWork unitOfWork
 			, ISpecificationLocator specificationLocator
@@ -85,6 +89,7 @@ namespace Besnik.GenericRepository
 		/// <summary>
 		/// Gets entity from the repository by given id.
 		/// </summary>
+		/// <param name="id">Primary key that identifies the entity.</param>
 		public virtual TEntity GetById(TPrimaryKey id)
 		{
 			return this.UnitOfWork.GetById<TEntity, TPrimaryKey>(id);
@@ -102,6 +107,9 @@ namespace Besnik.GenericRepository
 		/// Gets specification that allows to filter only requested entities
 		/// from the repository.
 		/// </summary>
+		/// <typeparam name="TSpecification">Concrete specification that will be resolved
+		/// and initialized with underlying unit of work instance. This ensures fluent 
+		/// and strongly typed way of connecting repository (uow) and specifications.</typeparam>
 		public virtual TSpecification Specify<TSpecification>()
 			where TSpecification : class, ISpecification<TEntity>
 		{

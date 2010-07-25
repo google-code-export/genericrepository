@@ -12,7 +12,8 @@ namespace Besnik.GenericRepository
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		/// <param name="unitOfWorkConvertor"></param>
+		/// <param name="unitOfWorkConvertor">Interface provides functionality to convert
+		/// unit of work to <see cref="IQueryable"/>.</param>
 		public QueryableSpecification(IUnitOfWorkConvertor unitOfWorkConvertor)
 		{
 			if (unitOfWorkConvertor == null)

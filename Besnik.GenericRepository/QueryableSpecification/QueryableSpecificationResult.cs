@@ -23,8 +23,6 @@ namespace Besnik.GenericRepository
 		/// </summary>
 		protected IQueryable<TEntity> Queryable { get; set; }
 
-		#region ISpecificationResult<TEntity> Members
-
 		/// <summary>
 		/// Takes given count of the records represented by the specification.
 		/// </summary>
@@ -51,7 +49,5 @@ namespace Besnik.GenericRepository
 		{
 			return Queryable.Single();
 		}
-
-		#endregion
 	}
 }

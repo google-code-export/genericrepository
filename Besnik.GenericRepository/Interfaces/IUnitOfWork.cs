@@ -9,12 +9,13 @@ namespace Besnik.GenericRepository
 	public interface IUnitOfWork : IDisposable
 	{
 		/// <summary>
-		/// Flushes content of unit of work to the underlying data storage.
+		/// Flushes content of unit of work to the underlying data storage. Causes unsaved
+		/// entities to be written to the data storage.
 		/// </summary>
 		void Flush();
 
 		/// <summary>
-		/// Begins transaction.
+		/// Begins the transaction.
 		/// </summary>
 		ITransaction BeginTransaction();
 
@@ -26,6 +27,7 @@ namespace Besnik.GenericRepository
 		/// <example>
 		/// using ( var tnx = uow.BeginTransaction() ) { /* do some work */ }
 		/// </example>
+		/// See also <seealso cref="ITransaction"/> interface for more details.
 		void EndTransaction(ITransaction transaction);
 
 		/// <summary>

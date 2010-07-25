@@ -37,6 +37,9 @@ namespace Besnik.GenericRepository
 		/// <summary>
 		/// Gets specification interface for complex searching for an entity or entities.
 		/// </summary>
+		/// <typeparam name="TSpecification">Concrete specification that will be resolved
+		/// and initialized with underlying unit of work instance. This ensures fluent 
+		/// and strongly typed way of connecting repository (uow) and specifications.</typeparam>
 		TSpecification Specify<TSpecification>() where TSpecification : class, ISpecification<TEntity>;
 	}
 }
