@@ -5,6 +5,13 @@ namespace Besnik.Domain.EntityFramework
 {
 	public class CustomerConfiguration : EntityConfiguration<Customer>
 	{
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <remarks>
+		/// Make sure to update also EntityFrameworkCustomerRepositoryFixture.cs
+		/// and InitializeDataStorage() method that clears db before each test.
+		/// </remarks>
 		public CustomerConfiguration()
 		{
 			Property(c => c.Id).IsIdentity();

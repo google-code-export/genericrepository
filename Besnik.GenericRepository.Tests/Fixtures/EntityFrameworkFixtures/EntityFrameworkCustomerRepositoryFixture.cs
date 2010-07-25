@@ -5,6 +5,8 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration;
 using Besnik.Domain.EntityFramework;
 using Besnik.Domain;
+using System.Data.Entity;
+using System.Data;
 
 namespace Besnik.GenericRepository.Tests
 {
@@ -13,6 +15,9 @@ namespace Besnik.GenericRepository.Tests
 	{
 		protected override IUnitOfWorkFactory CreateUnitOfWorkFactory()
 		{
+			var dbInitializer = new RecreateDatabaseIfModelChanges<DbContext>();
+			Database.SetInitializer(dbInitializer);
+
 			return new EntityFrameworkUnitOfWorkFactory(
 				this.GetConnectionString()
 				, this.GetDbModel()
@@ -25,6 +30,25 @@ namespace Besnik.GenericRepository.Tests
 			{
 				var dbContext = (uow as EntityFrameworkUnitOfWork).DbContext;
 				dbContext.Database.EnsureInitialized();
+
+				// clear db manually as EF 4 Extensions CTP4 does not contain any functionality
+				// except deleting and creating database which is not what we want.
+				var connection = dbContext.Database.Connection;
+
+				try
+				{
+					connection.Open();
+
+					using (var dbCommand = connection.CreateCommand())
+					{
+						dbCommand.CommandText = "delete from Customers";
+						dbCommand.ExecuteNonQuery();
+					}
+				}
+				finally
+				{
+					connection.Close();
+				}
 			}
 		}
 
