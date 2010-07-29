@@ -20,7 +20,7 @@ namespace Besnik.GenericRepository.NHibernate
 			}
 			catch ( Exception ex )
 			{
-				throw new Exception(
+				throw new GenericRepositoryException(
 					string.Format("Error while configuring NHibernate: {0}.", ex.Message)
 					, ex
 					);
@@ -32,7 +32,7 @@ namespace Besnik.GenericRepository.NHibernate
 			}
 			catch ( Exception ex )
 			{
-				throw new Exception(
+				throw new GenericRepositoryException(
 					string.Format("Error while building NH session factory: {0}.", ex.Message)
 					, ex
 					);

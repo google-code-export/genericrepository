@@ -20,10 +20,18 @@ namespace Besnik.GenericRepository.Tests
 		/// </summary>
 		public Customer GetCustomer()
 		{
+			return GetCustomer(DefaultCustomerName, DefaultCustomerAge);
+		}
+
+		/// <summary>
+		/// Gets customer stub with given name and age.
+		/// </summary>
+		public Customer GetCustomer(string name, int age)
+		{
 			return new Customer()
 			{
-				Name = DefaultCustomerName,
-				Age = DefaultCustomerAge
+				Name = name,
+				Age = age
 			};
 		}
 

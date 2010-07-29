@@ -113,7 +113,24 @@ namespace Besnik.GenericRepository
 		public virtual TSpecification Specify<TSpecification>()
 			where TSpecification : class, ISpecification<TEntity>
 		{
-			var specification = this.SpecificationLocator.Resolve<TSpecification, TEntity>();
+			TSpecification specification = default(TSpecification);
+			
+			try
+			{
+				specification = this.SpecificationLocator.Resolve<TSpecification, TEntity>();
+			}
+			catch (Exception ex)
+			{
+				throw new GenericRepositoryException(
+					string.Format(
+						"Could not resolve requested specification {0} for entity {1} from the specification locator."
+						, typeof(TSpecification).FullName 
+						, typeof(TEntity).FullName
+						)
+					, ex
+					);
+			}
+
 			specification.Initialize(UnitOfWork);
 			return specification;
 		}

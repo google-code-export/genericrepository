@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System;
 
 namespace Besnik.GenericRepository
 {
@@ -48,6 +50,44 @@ namespace Besnik.GenericRepository
 		public TEntity Single()
 		{
 			return Queryable.Single();
+		}
+
+
+		/// <summary>
+		/// Bypasses a specified number of elements in a sequence and then returns 
+		/// the remaining elements.
+		/// </summary>
+		public ISpecificationResult<TEntity> Skip(int count)
+		{
+			this.Queryable = this.Queryable.Skip(count);
+			return this;
+		}
+
+		/// <summary>
+		/// Sorts the elements of a sequence in ascending order according to a key.
+		/// </summary>
+		public ISpecificationResult<TEntity> OrderByAscending<TKey>(Expression<Func<TEntity, TKey>> keySelector)
+		{
+			this.Queryable = this.Queryable.OrderBy(keySelector);
+			return this;
+		}
+
+		/// <summary>
+		/// Sorts the elements of a sequence in descending order according to a key.
+		/// </summary>
+		public ISpecificationResult<TEntity> OrderByDescending<TKey>(Expression<Func<TEntity, TKey>> keySelector)
+		{
+			this.Queryable = this.Queryable.OrderByDescending(keySelector);
+			return this;
+		}
+
+		/// <summary>
+		/// Returns the only element of a sequence, or a default value if the sequence is empty; 
+		/// this method throws an exception if there is more than one element in the sequence.
+		/// </summary>
+		public TEntity SingleOrDefault()
+		{
+			return Queryable.SingleOrDefault();
 		}
 	}
 }
