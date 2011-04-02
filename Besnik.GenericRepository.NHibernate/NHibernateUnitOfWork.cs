@@ -69,7 +69,6 @@ namespace Besnik.GenericRepository.NHibernate
 		{
 			if ( this.Session != null )
 			{
-				this.Session.Flush();
 				(this.Session as IDisposable).Dispose();
 				this.Session = null;
 			}
