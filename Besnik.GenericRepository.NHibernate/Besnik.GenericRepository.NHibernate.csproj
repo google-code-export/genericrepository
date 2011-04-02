@@ -35,10 +35,6 @@
     <Reference Include="NHibernate">
       <HintPath>..\Lib\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.Linq, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\NHibernate.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
