@@ -125,10 +125,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.config" />
-    <None Include="Config\Hibernate.config">
+    <None Include="Config\NHibernate.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Besnik.GenericRepository.Tests.nunit" />
+    <None Include="Config\NHibernate.sqlite.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

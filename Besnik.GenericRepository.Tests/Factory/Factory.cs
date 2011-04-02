@@ -13,7 +13,7 @@ namespace Besnik.GenericRepository.Tests
 	{
 		public static readonly string DefaultCustomerName = "John Doe";
 		public static readonly int DefaultCustomerAge = 16;
-		public static readonly string NHibernateConfigPath = "Config\\Hibernate.config";
+		public static readonly string NHibernateConfigPath = "Config\\NHibernate.config";
 
 		/// <summary>
 		/// Gets customer stub.

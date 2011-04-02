@@ -14,7 +14,7 @@ namespace Besnik.GenericRepository.NHibernate
 		/// </summary>
 		public IQueryable<TEntity> ToQueryable<TEntity>(IUnitOfWork unitOfWork) where TEntity : class
 		{
-			return ( unitOfWork as NHibernateUnitOfWork ).Session.Linq<TEntity>();
+			return (unitOfWork as NHibernateUnitOfWork).Session.Query<TEntity>();
 		}
 	}
 }
