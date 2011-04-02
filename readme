@@ -19,6 +19,12 @@ Contact
 Do not hesitate to contact author wiht any feedback or question:
 besnikgeek@gmail.com
 
+=======
+Sources
+=======
+Download and explore source codes at:
+http://code.google.com/p/genericrepository/
+
 ===============
 Tests Execution
 ===============
@@ -27,17 +33,16 @@ Build solution in Visual Studio and open .nunit file using NUnit GUI. The tests 
 
 By default all ORM mappers connects to MSSQL Express database. See .config(s) for connection strings in "Config" directory in Tests project. NHiberate, Linq2Sql and EntityFrameworks uses different files to load configuration. When changing database or connection, make sure you update all connection strings in Config directory!
 
-=======
-Sources
-=======
-Download and explore source codes at:
-http://code.google.com/p/genericrepository/
-
 ====
 Blog
 ====
 Some additional articles and discussion can be found here:
 http://besnikgeek.blogspot.com
 
-
+======================
+Supported data mappers
+======================
+NHibernate 3.1.0
+LinqToSql .NET 4
+Entity Framework CTP4 (waiting till EF 4.1 is officially released)
 
